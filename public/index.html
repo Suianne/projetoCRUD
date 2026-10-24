@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Alunos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro de Alunos</h1>
+
+    <section class="cartao">
+      <h2>Novo aluno</h2>
+      <form id="formAluno" novalidate>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" maxlength="120" required />
+
+        <label for="email">E-mail</label>
+        <input id="email" type="email" maxlength="160" required />
+
+        <label for="curso">Curso</label>
+        <input id="curso" type="text" maxlength="120" required />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+
+    <p id="mensagem" role="status" aria-live="polite"></p>
+
+    <section class="cartao">
+      <h2>Consultar alunos</h2>
+      <div class="busca">
+        <input id="busca" type="text" placeholder="Buscar por nome" />
+        <button id="btnBuscar" type="button">Buscar</button>
+        <button id="btnLimpar" type="button" class="secundario">Limpar</button>
+      </div>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Curso</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="painelConfirmacao" class="cartao alerta" hidden>
+      <p id="textoConfirmacao"></p>
+      <button id="btnConfirmar" type="button" class="perigo">Confirmar exclusão</button>
+      <button id="btnCancelar" type="button" class="secundario">Cancelar</button>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
